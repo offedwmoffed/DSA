@@ -29,3 +29,27 @@ class LinkedList:
            
             current = current.next
         print(" -> ".join(x))
+
+def middlenode(list1:LinkedList):
+    fast = list1.head
+    slow = list1.head
+
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+    list1.head = slow
+
+    return list1.display()
+
+
+list1 = LinkedList()
+list1.append(1)
+list1.append(3)
+list1.append(2)
+list1.append(4)
+list1.append(0)
+list1.append(5)
+list1.append(7)
+list1.append(6)
+middlenode(list1)
+
